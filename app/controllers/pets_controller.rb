@@ -1,19 +1,24 @@
 class PetsController < ApplicationController
 skip_before_action :verify_authenticity_token
+  def index 
+    pets = Pet.All 
+    render json: pets 
+  end
 
 
   def new
     @pet = Pet.new
   end
+  
 
   def create
-    # binding.pry
+    binding.pry
     @pet = Pet.new(pet_params)
     if @pet.save
       PetMailer.pet_email(@pet).deliver_now
-      redirect_to '/'
+      render json: pet
     else
-      render new_pet_path
+      render json: {status: 500, message: 'Error creating pet'}
     end
   end
 
