@@ -21,6 +21,9 @@ ActiveRecord::Schema.define(version: 2019_09_06_040517) do
     t.string "sender_email"
     t.string "recipient_email"
     t.text "message"
+    t.string "url"
+    t.string "name"
+    t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

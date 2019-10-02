@@ -6,6 +6,9 @@ class CreatePets < ActiveRecord::Migration[5.2]
       t.string :sender_email
       t.string :recipient_email
       t.text :message
+      t.string :url
+      t.string :name
+      t.string :photo
 
       t.timestamps
     end
