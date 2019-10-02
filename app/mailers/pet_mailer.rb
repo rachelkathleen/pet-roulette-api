@@ -4,6 +4,6 @@ class PetMailer < ApplicationMailer
       @pet = pet
       mail(to: @pet.recipient_email,
         cc: @pet.sender_email,
-        subject: "Look at this pet!")
+        subject: "Someone sent you a pet from Pet Roulette!")
   end
 end

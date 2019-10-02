@@ -1,5 +1,6 @@
 class PetsController < ApplicationController
 skip_before_action :verify_authenticity_token
+  
   def index 
     pets = Pet.All 
     render json: pets 
