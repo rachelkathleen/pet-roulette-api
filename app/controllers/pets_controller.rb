@@ -12,11 +12,11 @@ skip_before_action :verify_authenticity_token
   
 
   def create
-    binding.pry
+    # binding.pry
     @pet = Pet.new(pet_params)
     if @pet.save
       PetMailer.pet_email(@pet).deliver_now
-      render json: pet
+      render json: @pet
     else
       render json: {status: 500, message: 'Error creating pet'}
     end
@@ -25,6 +25,6 @@ skip_before_action :verify_authenticity_token
   private
 
   def pet_params
-    params.require(:pet).permit(:recipient_email, :recipient_name, :sender_email, :sender_name, :message)
+    params.require(:pet).permit(:recipient_email, :recipient_name, :sender_email, :sender_name, :message, :url, :name, :photo)
   end
 end
