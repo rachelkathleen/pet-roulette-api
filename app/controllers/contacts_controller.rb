@@ -14,15 +14,16 @@ skip_before_action :verify_authenticity_token
       binding.pry
       @contact = Contact.new(contact_params)
       if @contact.save
-        ContactMailer.contact_email(@contact).deliver_now
+        ContactMailer.contact_message(@contact).deliver_now
         render json: @contact
       else
         render json: {status: 500, message: 'Error Sending Email'}
+      end
     end
 
     private
 
     def contact_params
-      params.require(:contact).permit(:email, :name, :message)
+      params.require(:contact).permit(:name, :email, :message)
     end
 end
