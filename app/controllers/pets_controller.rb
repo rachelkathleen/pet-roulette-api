@@ -2,7 +2,7 @@ class PetsController < ApplicationController
 skip_before_action :verify_authenticity_token
   
   def index 
-    pets = Pet.All 
+    pets = Pet.all 
     render json: pets 
   end
 
