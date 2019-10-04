@@ -9,6 +9,7 @@ class CreatePets < ActiveRecord::Migration[5.2]
       t.string :url
       t.string :name
       t.string :photo
+      t.string :species
 
       t.timestamps
     end
