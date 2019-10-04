@@ -11,7 +11,7 @@ skip_before_action :verify_authenticity_token
     
 
     def create
-      binding.pry
+      # binding.pry
       @contact = Contact.new(contact_params)
       if @contact.save
         ContactMailer.contact_message(@contact).deliver_now
