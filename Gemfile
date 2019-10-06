@@ -18,6 +18,8 @@ gem 'puma', '~> 3.11'
 gem 'pry'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
+gem 'rails_12factor'
+gem 'foreman'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
