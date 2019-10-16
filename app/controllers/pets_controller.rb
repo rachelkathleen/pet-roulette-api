@@ -26,6 +26,6 @@ skip_before_action :verify_authenticity_token
   private
 
   def pet_params
-    params.require(:pet).permit(:recipient_email, :recipient_name, :sender_email, :sender_name, :message, :url, :name, :photo, :species)
+    params.require(:pet).permit(:recipient_email, :recipient_name, :sender_email, :sender_name, :message, :url, :name, :photo, :species, :likes)
   end
 end
